@@ -1,0 +1,77 @@
+/* Background */
+body{
+    margin:0;
+    background:#62C3E4;      /* Light blue same as image */
+    font-family:Arial, sans-serif;
+}
+
+/* Top bar */
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 30px;
+    background:#0D0D0D;       /* Black top bar */
+    color:white;
+}
+
+.logo{
+    font-size:38px;           /* Big like image */
+    font-weight:bold;
+}
+
+/* Search area */
+.search-box input{
+    width:180px;
+    padding:6px 10px;
+    font-size:18px;
+    color:white;
+    background:#222;
+    border:2px solid white;
+    border-radius:4px;
+    outline:none;
+}
+
+/* Sign in button */
+.signin{
+    background:black;
+    color:white;
+    border:2px solid white;
+    padding:6px 14px;
+    font-size:20px;
+    cursor:pointer;
+    border-radius:4px;
+}
+
+/* Container for the two big boxes */
+.panel-wrapper{
+    margin-top:50px;
+    display:flex;
+    justify-content:center;
+    gap:120px;          /* space between Students / Companies */
+}
+
+/* Each box */
+.panel{
+    width:330px;
+    height:420px;
+    background:#0E0E0E; /* Black inner rectangle */
+    border:10px solid #62C3E4; /* Outer blue frame */
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    padding-top:25px;
+}
+
+.panel h2{
+    color:white;
+    font-size:28px;
+    margin-bottom:25px;
+}
+
+/* White icons */
+.icon{
+    width:230px;
+    height:auto;
+}
