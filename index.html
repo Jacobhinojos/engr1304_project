@@ -1,283 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shawn Li - Academic Profile</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoLab.com - Profile</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        body {
-            background-color: #ffffff;
-            color: #333;
-            line-height: 1.6;
-        }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #111; 
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+    .app-wrapper {
+      border: 12px solid #111; 
+      background: #63b9d4;     
+      min-height: 100vh;
+    }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
+    .header {
+      background: #111;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 32px;
+    }
 
-        .name-title {
-            font-size: 1.5rem;
-            color: #333;
-            text-decoration: none;
-        }
+    .site-title {
+      font-size: 46px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
+    .search-box {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
 
-        .nav-links a {
-            text-decoration: none;
-            color: #666;
-            transition: color 0.3s;
-        }
+    .search-box input[type="text"] {
+      width: 320px;
+      padding: 8px 12px;
+      border: 2px solid white;
+      background: #000;
+      color: #fff;
+      font-size: 18px;
+    }
 
-        .nav-links a:hover {
-            color: #2196F3;
-        }
+    .search-box input::placeholder {
+      color: #cccccc;
+    }
 
-        .profile-section {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
+    .hamburger-wrapper {
+      background: #e6e6e6;
+      padding: 6px 8px;
+      cursor: pointer;
+    }
 
-        .profile-sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
+    .hamburger {
+      width: 32px;
+      height: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
-        .profile-image {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 0.5rem;
-        }
+    .hamburger span {
+      display: block;
+      height: 4px;
+      background: #000;
+      border-radius: 2px;
+    }
 
-        .profile-info h1 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
+    .main {
+      display: grid;
+      grid-template-columns: 260px 1fr 320px;
+      gap: 30px;
+      padding: 35px;
+    }
 
-        .interests {
-            color: #666;
-            margin-bottom: 1rem;
-        }
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 20px;
+    }
 
-        .social-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
+    .menu-item {
+      background: #000;
+      color: #fff;
+      border: 2px solid #000;
+      padding: 10px 14px;
+      font-size: 20px;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        .social-link {
-            text-decoration: none;
-            color: #333;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            padding: 0.7rem;
-            transition: all 0.3s ease;
-            border-radius: 8px;
-            font-size: 0.95rem;
-        }
+    .menu-item span.label {
+      flex: 1;
+    }
 
-        .social-link i {
-            width: 20px;
-            text-align: center;
-            font-size: 1.2rem;
-        }
+    .menu-item span.arrow-box {
+      width: 24px;
+      height: 22px;
+      border-left: 2px solid #63b9d4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
 
-        .ttu-logo {
-            width: 16px; /* Smaller logo size */
-            height: 16px;
-            margin-right: 0.5rem;
-        }
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+    }
 
-        /* Colorful icons */
-        .social-link.linkedin i {
-            color: #0077b5;
-        }
+    .section-title {
+      font-size: 44px;
+      font-weight: bold;
+      margin: 0 0 10px 0;
+    }
 
-        .social-link.github i {
-            color: #333;
-        }
+    .card {
+      background: #e6e6e6;
+      padding: 22px 28px;
+      font-size: 20px;
+      width: 360px;
+      border-radius: 4px;
+    }
 
-        .social-link.twitter i {
-            color: #1DA1F2;
-        }
+    .profile-section {
+      background: #e6e6e6;
+      padding: 25px;
+      width: 100%;
+      max-width: 600px;
+      border-radius: 4px;
+    }
 
-        .social-link.email i {
-            color: #EA4335;
-        }
+    .profile-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
 
-        .social-link.university i {
-            color: #cc0000;
-        }
+    .profile-avatar {
+      width: 80px;
+      height: 80px;
+      background: #63b9d4;
+      border-radius: 50%;
+      margin-right: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      color: white;
+      font-weight: bold;
+    }
 
-        .social-link.location i {
-            color: #34a853;
-        }
+    .profile-info h2 {
+      margin: 0 0 5px 0;
+      font-size: 28px;
+    }
 
-        /* Hover effects */
-        .social-link:hover {
-            transform: translateX(5px);
-            background-color: #f8f9fa;
-        }
+    .profile-info p {
+      margin: 0;
+      color: #555;
+    }
 
-        .social-link.linkedin:hover {
-            background-color: #e6f3f9;
-        }
+    .profile-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
 
-        .social-link.github:hover {
-            background-color: #f6f8fa;
-        }
+    .detail-item {
+      margin-bottom: 12px;
+    }
 
-        .social-link.twitter:hover {
-            background-color: #e8f5fd;
-        }
+    .detail-label {
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 4px;
+    }
 
-        .social-link.email:hover {
-            background-color: #fef2f2;
-        }
+    .detail-value {
+      color: #555;
+    }
 
-        .social-link.university:hover {
-            background-color: #fff5f5;
-        }
+    .messages {
+      background: #e6e6e6;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      min-height: 430px;
+      border-radius: 4px;
+    }
 
-        .social-link.location:hover {
-            background-color: #f2f8f4;
-        }
+    .messages-title {
+      font-size: 40px;
+      margin: 0 0 10px 0;
+      align-self: flex-start;
+    }
 
-        .main-content h2 {
-            font-size: 2rem;
-            color: #333;
-            margin-bottom: 1.5rem;
-        }
+    .message-list {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 15px;
+    }
 
-        .content-block {
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
+    .message-item {
+      background: white;
+      padding: 12px 15px;
+      border-radius: 4px;
+      border-left: 4px solid #63b9d4;
+    }
 
-        .highlight-link {
-            color: #2196F3;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+    .message-sender {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
 
-        .highlight-link:hover {
-            text-decoration: underline;
-            color: #1976D2;
-        }
+    .message-preview {
+      color: #555;
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
-        .content-block p {
-            margin-bottom: 1rem;
-        }
+    @media (max-width: 1050px) {
+      .main {
+        grid-template-columns: 1fr;
+      }
 
-        @media (max-width: 768px) {
-            .profile-section {
-                grid-template-columns: 1fr;
-            }
+      .messages {
+        min-height: 260px;
+      }
 
-            .profile-sidebar {
-                align-items: center;
-                text-align: center;
-            }
+      .sidebar {
+        margin-top: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
 
-            .nav-links {
-                display: none;
-            }
+      .menu-item {
+        flex: 1 1 45%;
+      }
 
-            .social-link {
-                justify-content: center;
-            }
-        }
-    </style>
+      .content {
+        order: -1; 
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <a href="index.html" class="name-title">Your name here</a>
-            <div class="nav-links">
-                <a href="projects.html">Projects</a>
-                <a href="files/Shawn_cv.pdf" target="_blank">CV</a>
-            </div>
-        </nav>
+  <div class="app-wrapper">
 
-        <div class="profile-section">
-            <div class="profile-sidebar">
-                <img src="images/profile.jpg" alt="Profile Picture" class="profile-image">
-                <h1>Shawn Li</h1>
-                <p class="interests">Interests in AI, Human Computer Interaction.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        Lubbock, Texas, United States
-                    </a>
-                    <a href="https://www.ttu.edu" class="social-link university" target="_blank">
-                        <img src="images/logo.png" alt="TTU Logo" class="ttu-logo">
-                        Texas Tech University
-                    </a>
-                    <a href="mailto:gaoli@ttu.edu" class="social-link email">
-                        <i class="fas fa-envelope"></i>
-                        Email
-                    </a>
-                    <a href="https://github.com/GaoxiangLi" class="social-link github" target="_blank">
-                        <i class="fab fa-github"></i>
-                        Github
-                    </a>
-                    <a href="https://www.linkedin.com/in/gaoxiang-li-7b799b143/" class="social-link linkedin" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                        LinkedIn
-                    </a>
-                    <a href="https://x.com/MaazAmjad13" class="social-link twitter" target="_blank">
-                        <i class="fab fa-x-twitter"></i>
-                        X (formerly Twitter)
-                    </a>
-                </div>
-            </div>
+    <header class="header">
+      <div class="site-title">CoLab.com</div>
 
-            <div class="main-content">
-                <h2>About me</h2>
-                <div class="content-block">
-                    <p> I am a first-year Computer Science student at <a href="https://www.ttu.edu" class="highlight-link" target="_blank">Texas Tech University</a>, where I've developed a strong foundation in software development and artificial intelligence. Currently, I'm working on my senior thesis project focused on developing machine learning solutions for healthcare applications, under the guidance of <a href="#" class="highlight-link">Dr. [Advisor Name]</a>.</p>
-                </div>
+      <div class="search-box">
+        <input type="text" placeholder="Search..." />
+      </div>
 
-                <div class="content-block">
-                    <p>During my academic career, I've maintained a 4.00 GPA while gaining hands-on experience in full-stack development, data structures, and algorithm design. I've served as a teaching assistant for the Introduction to Programming course and led the university's AI Student Society, organizing workshops and hackathons.</p>
-                </div>
-
-                <div class="content-block">
-                    <p>My technical interests center around AI, machine learning and human-computer interaction. I recently completed a summer internship at <a href="#" class="highlight-link">[Tech Company]</a>, where I contributed to developing a real-time data analytics dashboard using React and Node.js. I'm particularly passionate about creating accessible and user-friendly applications that solve practical problems.</p>
-                </div>
-
-                <div class="content-block">
-                    <p>Beyond academics, I'm an avid participant in competitive programming contests and have represented Texas Tech in regional hackathons. I enjoy contributing to open-source projects and mentoring junior students in programming fundamentals. When I'm not coding, you can find me exploring photography or playing chess at our university's chess club.</p>
-                </div>
-            </div>
+      <div class="hamburger-wrapper">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-    </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <aside class="sidebar">
+        <button class="menu-item">
+          <span class="label">Student/Company Profile</span>
+          <span class="arrow-box">▼</span>
+        </button>
+
+        <button class="menu-item">
+          <span class="label">Account Settings</span>
+          <span class="arrow-box">▼</span>
+        </button>
+
+        <button class="menu-item">
+          <span class="label">Privacy</span>
+          <span class="arrow-box">▼</span>
+        </button>
+
+        <button class="menu-item">
+          <span class="label">Project List</span>
+          <span class="arrow-box">▼</span>
+        </button>
+
+        <button class="menu-item">
+          <span class="label">Payments</span>
+          <span class="arrow-box">▼</span>
+        </button>
+
+        <button class="menu-item">
+          <span class="label">Help</span>
+          <span class="arrow-box">▼</span>
+        </button>
+
+        <button class="menu-item">
+          <span class="label">Tutorial</span>
+          <span class="arrow-box">▼</span>
+        </button>
+      </aside>
+
+      <section class="content">
+        <h1 class="section-title">About Me</h1>
+        
+        <div class="profile-section">
+          <div class="profile-header">
+            <div class="profile-avatar">JS</div>
+            <div class="profile-info">
+              <h2>John Doe</h2>
+              <p>Computer Science Student | UI/UX Designer</p>
+            </div>
+          </div>
+          
+          <div class="profile-details">
+            <div class="detail-item">
+              <div class="detail-label">Education</div>
+              <div class="detail-value">Texas Tech University, Computer Science (Year 2)</div>
+            </div>
+            
+            <div class="detail-item">
+              <div class="detail-label">Skills</div>
+              <div class="detail-value">JavaScript, Python</div>
+            </div>
+            
+            <div class="detail-item">
+              <div class="detail-label">Location</div>
+              <div class="detail-value">Lubbuck, Tx</div>
+            </div>
+            
+            <div class="detail-item">
+              <div class="detail-label">Interests</div>
+              <div class="detail-value">Web Development, Graphic Design, Photography</div>
+            </div>
+            
+            <div class="detail-item">
+              <div class="detail-label">Availability</div>
+              <div class="detail-value">Part-time (15-20 hrs/week)</div>
+            </div>
+            
+            <div class="detail-item">
+              <div class="detail-label">Joined</div>
+              <div class="detail-value">November 2025</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">Current Projects</div>
+        <div class="card">Completed Projects</div>
+      </section>
+
+      <aside class="messages">
+        <h2 class="messages-title">Messages</h2>
+        <div class="message-list">
+          <div class="message-item">
+            <div class="message-sender">Company 1</div>
+            <div class="message-preview">We'd like to discuss your internship application...</div>
+          </div>
+          <div class="message-item">
+            <div class="message-sender">Company 2</div>
+            <div class="message-preview">Your portfolio looks great! Let's schedule a call...</div>
+          </div>
+          <div class="message-item">
+            <div class="message-sender">Company 3</div>
+            <div class="message-preview">We're interested in your web development skills...</div>
+          </div>
+          <div class="message-item">
+            <div class="message-sender">Company 4</div>
+            <div class="message-preview">Upcoming career fair on November 30th...</div>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </div>
 </body>
 </html>
-
